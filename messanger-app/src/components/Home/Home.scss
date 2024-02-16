@@ -15,6 +15,28 @@
         .sidebarContainer{
             flex: 1;
             border-right: 1px solid lightgray;
+            .navbarContainer{
+                background-color: #eee;
+                margin-right: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem;
+                border-radius: 10px;
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    .btn{
+                        padding: 0.5rem 1rem;
+                        border-radius: 10px;
+                        border: none;
+                        outline: none;
+                        background-color: #ddd ;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
         .chatContainer{
             flex: 2;
