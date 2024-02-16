@@ -2,7 +2,7 @@ import React from 'react'
 
 const Chats = () => {
   return (
-    <div>
+    <div className='chatsContainer'>
       chats
     </div>
   )
