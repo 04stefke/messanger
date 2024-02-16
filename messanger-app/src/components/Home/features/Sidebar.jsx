@@ -5,6 +5,10 @@ import Chats from './Chats'
 const Sidebar = () => {
   return (
     <div className='sidebarContainer'>
+        <div className='hamburgerContainer'>
+          <input type='checkbox' id='checkbox' className='checkbox'/>
+          <div className='hamburger'></div>
+        </div>
       <Navbar/>
       <Search/>
       <Chats/>
