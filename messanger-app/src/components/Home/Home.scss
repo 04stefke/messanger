@@ -43,7 +43,7 @@
 
             .searchContainer{
                 margin-right: 2rem;
-
+                border-bottom: 1px solid #ccc;
                 .searchForm{
                     display: flex;
                     align-items: center;
@@ -55,7 +55,7 @@
                         padding: 1rem 2rem;
                         border: none;
                         outline: none;
-                        border-bottom: 1px solid lightgray;
+                        border-bottom: 1px solid #eee;
                     }
                 }
                 .userChat{
@@ -65,6 +65,34 @@
                     gap: 3rem;
                     padding: 1rem 2rem;
                     cursor: pointer;
+                    margin-top: 1rem;
+                    font-weight: 500;
+                    &:hover{
+                        background-color: #eee;
+                    }
+                }
+            }
+            
+            .chatsContainer{
+                margin-top: 1rem;
+                margin-right: 2rem;
+                .userChat{
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    gap: 3rem;
+                    padding: 1rem 2rem;
+
+                    .userChatInfo {
+                        p{
+                            color: #888;
+                        }
+                        span{
+                            font-weight: 600;
+                            font-size: 20px;
+                        } 
+
+                    }
                     &:hover{
                         background-color: #eee;
                     }
