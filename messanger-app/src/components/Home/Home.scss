@@ -12,9 +12,11 @@
         width: 80%;
         height: 80%;
         display: flex;
+
         .sidebarContainer{
             flex: 1;
             border-right: 1px solid lightgray;
+
             .navbarContainer{
                 background-color: #eee;
                 margin-right: 2rem;
@@ -23,6 +25,7 @@
                 justify-content: space-between;
                 padding: 1rem;
                 border-radius: 10px;
+
                 .user{
                     display: flex;
                     align-items: center;
@@ -34,6 +37,36 @@
                         outline: none;
                         background-color: #ddd ;
                         cursor: pointer;
+                    }
+                }
+            }
+
+            .searchContainer{
+                margin-right: 2rem;
+
+                .searchForm{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+
+                    input{
+                        width: 100%;
+                        padding: 1rem 2rem;
+                        border: none;
+                        outline: none;
+                        border-bottom: 1px solid lightgray;
+                    }
+                }
+                .userChat{
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    gap: 3rem;
+                    padding: 1rem 2rem;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #eee;
                     }
                 }
             }
