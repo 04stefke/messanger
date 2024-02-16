@@ -8,7 +8,9 @@ const Navbar = () => {
         <UserOutlined />
         <span className='userName'>Stefan</span>
         <button className='btn'>Logout</button>
-      </div>
+      </div> 
+
+        
     </div>
   )
 }
