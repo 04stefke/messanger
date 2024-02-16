@@ -102,6 +102,53 @@
         .chatContainer{
             flex: 2;
             border-right: 1px solid lightgray;
+            .chatInfo{
+                background-color: #eee;
+                padding: 1rem 2rem;
+            }
+            .inputContainer{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid lightgray;
+                border-top: 1px solid #ddd;
+                input{
+                    padding: 1rem 2rem;
+                    border: none;
+                    font-size: 20px;
+                    outline: none;
+                    width: 100%;
+                    &::placeholder{
+                        color: #bbb;
+                    }
+                }
+                .inputInfo{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    font-size: 18px;
+                    input{
+                        display: none;
+                    }
+                    label{
+                        cursor: pointer;
+                    }
+                }
+                .btn{
+                    padding: 1rem 2rem;
+                    border: none ;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #e7e7e7;
+                    }
+                }
+            }
+            .messagesContainer{
+                height: calc(100% - 108px);
+            }
         }
     }
 }
