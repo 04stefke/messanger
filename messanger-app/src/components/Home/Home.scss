@@ -5,7 +5,7 @@
 }
 
 @mixin tablet{
-    @media screen and (max-width:768px) {
+    @media screen and (max-width:1000px) {
         @content
     }
 }
@@ -23,90 +23,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    @include desktop{
+        height: 100%;
+    }
+    @include tablet{
+        height: 100vh;
+    }
     .homeWrapper{
         background-color: #fff;
         padding: 2rem;
         border-radius: 20px;
         width:80vw;
-        height: 80vh;
+        height: fit-content;
         display: flex;
-        position: relative;
-
+        
+        @include desktop{
+            flex-direction: column;
+        }
         .sidebarContainer{
             flex: 1;
             border-right: 1px solid lightgray;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
             @include desktop{
-                position: fixed;
-                left: -500px;
+                flex: none;
             }
-
-            .hamburgerContainer{
-                display: none;
-                @include desktop{
-                    display: block;
-                }
-            .checkbox{
-                position: absolute;
-                width: 30px;
-                height: fit-content;
-                top: 0.7rem;
-                opacity: 0;
-                cursor: pointer;
-                height: 30px;
-                z-index: 3;
-                margin-left: 1rem;
-                left: 635px;
+            .sidebarInfo{
+                width: 100%;
+                margin-right: 2rem;
             }
-            .checkbox:checked ~ .hamburger{
-                background: none;
-            }
-            .checkbox:checked ~ .hamburger::before{
-                top: 0;
-                transform: rotate(-45deg);
-            }
-            .checkbox:checked ~ .hamburger::after{
-                top: 0;
-                transform: rotate(45deg);
-            }
-
-            .hamburger{
-                position: relative;
-                width: 30px;
-                height: 4px;
-                top: 1.5rem;
-                margin-left: 1rem;
-                background-color: #fff;
-                border-radius: 10px;
-                cursor: pointer;
-                z-index: 2;
-                transition: 0.3s;
-                left: 635px;
-                &::before,
-                &::after{
-                    content: '';
-                    position: absolute;
-                    height: 4px;
-                    right: 0;
-                    background-color: #fff;
-                    border-radius: 10px;
-                    transition: 0.3s;
-                }
-
-                &::before{
-                    top: -10px;
-                    width: 20px;
-                }
-                &::after{
-                    top: 10px;
-                    width: 20px;
-                }
-                
-            }}
-            
             .navbarContainer{
                 background-color: #eee;
-                margin-right: 2rem;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -130,7 +79,7 @@
             }
 
             .searchContainer{
-                margin-right: 2rem;
+                
                 border-bottom: 1px solid #ccc;
                 .searchForm{
                     display: flex;
@@ -163,7 +112,7 @@
             
             .chatsContainer{
                 margin-top: 1rem;
-                margin-right: 2rem;
+                
                 .userChat{
                     display: flex;
                     align-items: center;
@@ -190,7 +139,9 @@
         .chatContainer{
             flex: 2;
             border-right: 1px solid lightgray;
-
+            @include desktop{
+                flex: none;
+            }
             .chatInfo{
                 background-color: #eee;
                 padding: 1rem 2rem;
