@@ -1,8 +1,10 @@
 import React from 'react'
 import {FileAddOutlined} from '@ant-design/icons'
 import './Register.scss'
-import {auth} from '../../firebase'
-import {createUserWithEmailAndPassword} from 'firebase/auth'
+import {auth, db, storage} from '../../firebase'
+import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore"; 
 
 const Register = () => {
 
@@ -15,7 +17,31 @@ const Register = () => {
     
     try{
       const res = await createUserWithEmailAndPassword(auth, email, password)
-        
+      const storageRef = ref(storage, displayName);
+      
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on(
+        (error) => {
+          console.log(error)
+        }, 
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, {
+              displayName,
+              photoURL:downloadURL
+            })
+            await setDoc(doc(db, "users", res.user.uid),{
+              uid: res.user.uid,
+              displayName, 
+              email,
+              photoURL: downloadURL
+            })
+
+          });
+          
+        }
+      );
     }catch(err){
       console.log(err)
     }
