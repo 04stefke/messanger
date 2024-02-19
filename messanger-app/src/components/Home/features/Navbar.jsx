@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className='navbarContainer'>
       <span>Stefan's Chat</span>
       <div className="user">
-        <img src={currentUser.photoURL} style={{width: '40px', borderRadius: '50%'}}/> 
+        <img src={currentUser.photoURL} style={{width: '40px', borderRadius: '50%', objectFit:'cover'}}/> 
         <span className='userName'>{currentUser.displayName}</span>
         <button className='btn' onClick={() => signOut(auth)}>Logout</button>
       </div> 
