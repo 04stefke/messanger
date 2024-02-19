@@ -1,13 +1,15 @@
 import React from 'react'
+import { useNavigate  } from 'react-router-dom';
 import {FileAddOutlined} from '@ant-design/icons'
 import './Register.scss'
 import {auth, db, storage} from '../../firebase'
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore"; 
+import { doc, setDoc } from "firebase/firestore"; 
+
 
 const Register = () => {
-
+  var navigate = useNavigate ()
   const handleSubmit = async(e) => {
     e.preventDefault()
     const displayName = e.target[0].value
@@ -37,7 +39,10 @@ const Register = () => {
               email,
               photoURL: downloadURL
             })
-
+            await setDoc(doc(db, "userChat", res.user.uid), {
+              
+            })
+            navigate("/")
           });
           
         }
