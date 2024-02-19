@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate  } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import {FileAddOutlined} from '@ant-design/icons'
 import './Register.scss'
 import {auth, db, storage} from '../../firebase'
@@ -69,7 +69,7 @@ const Register = () => {
                 </label>
                 <button className="btn">Sign up</button>
             </form>
-            <p>Got an account! Login</p>
+            <p>Got an account! <Link to='/login'>Login</Link> </p>
         </div>
     </div>
   )
