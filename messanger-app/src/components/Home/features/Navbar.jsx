@@ -1,5 +1,7 @@
 import React from 'react'
 import {UserOutlined} from '@ant-design/icons'
+import {auth} from '../../../firebase'
+import {signOut} from 'firebase/auth'
 const Navbar = () => {
   return (
     <div className='navbarContainer'>
@@ -7,7 +9,7 @@ const Navbar = () => {
       <div className="user">
         <UserOutlined />
         <span className='userName'>Stefan</span>
-        <button className='btn'>Logout</button>
+        <button className='btn' onClick={() => signOut(auth)}>Logout</button>
       </div> 
 
         
