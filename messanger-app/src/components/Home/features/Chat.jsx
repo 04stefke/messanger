@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Messages from './Messages'
 import Input from './Input'
+import { UserContext } from '../../../context/UserContext'
+
+
 const Chat = () => {
+  const {data} = useContext(UserContext)
   return (
     <div className='chatContainer'>
       <div className="chatInfo">
-        <span>Stefan</span>
+        <span>{data.user?.displayName}</span>
       </div>
       <Messages/>
       <Input/>

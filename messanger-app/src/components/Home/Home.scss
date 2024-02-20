@@ -36,7 +36,7 @@
         width:80vw;
         height: fit-content;
         display: flex;
-        
+        min-height: 700px;
         @include desktop{
             flex-direction: column;
         }

@@ -21,10 +21,15 @@ const Chats = () => {
     currentUser.uid && getChats()
   },[currentUser.uid])
   console.log(Object.entries(chats))
+
+  const handleSelect = (user) => {
+    dispatch({type: 'CHANGE_USER', payload: user})
+  }
+
   return (
     <div className='chatsContainer'>
       {Object.entries(chats)?.map(chat => ( 
-        <div className='userChat' key={chat[0]}>
+        <div className='userChat' key={chat[0]} onClick={() => handleSelect(chat[1].userInfo)}>
           <img src={chat[1].userInfo.photoURL} width={'50px'} alt="" />
           <div className="userChatInfo">
             <span>{chat[1].userInfo.displayName}</span>
