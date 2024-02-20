@@ -53,10 +53,9 @@ const Search = () => {
       dispatch({type: 'CHANGE_USER', payload: user})
     }catch(err){
       console.log(err)
-      setUser(null)
-      setUsername('')
     }
-    
+    setUser(null)
+    setUsername('')
   }
 
   return (
