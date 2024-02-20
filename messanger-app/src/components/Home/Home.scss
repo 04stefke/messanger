@@ -39,6 +39,7 @@
         min-height: 700px;
         @include desktop{
             flex-direction: column;
+            height: 100%;
         }
         .sidebarContainer{
             flex: 1;
@@ -99,8 +100,8 @@
                     display: flex;
                     align-items: center;
                     justify-content: start;
-                    gap: 3rem;
-                    padding: 1rem 2rem;
+                    gap: 2rem;
+                    padding: 1rem 2rem 1rem 0;
                     cursor: pointer;
                     margin-top: 1rem;
                     font-weight: 500;
@@ -117,9 +118,12 @@
                     display: flex;
                     align-items: center;
                     justify-content: start;
-                    gap: 3rem;
-                    padding: 1rem 2rem;
-
+                    gap: 2rem;
+                    padding: 1rem 2rem 1rem 0;
+                    cursor: pointer;
+                    img{
+                        border-radius: 50%;
+                    }
                     .userChatInfo {
                         p{
                             color: #888;
@@ -222,9 +226,9 @@
                             margin: 1rem;
                         }
                         img{
-                            max-width: 80%;
+                            max-width: 60%;
                             @include desktop{
-                                width: 90%;
+                                width: 50%;
                             }
                         }
 
