@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {UserOutlined} from '@ant-design/icons'
-const Message = () => {
+import { AuthContext } from '../../../context/AuthContext'
+import { UserContext } from '../../../context/UserContext'
+const Message = ({m}) => {
+  const {currentUser} = useContext(AuthContext)
+  const {data} = useContext(UserContext)
+
   return (
     <div className='message owner'>
       <div className="messageInfo">
-        <UserOutlined/>
         
+          
       </div>
       <div className="messageContent">
         <p>Hello, this is a message</p>
