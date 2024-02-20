@@ -26,9 +26,7 @@
     @include desktop{
         height: 100%;
     }
-    @include tablet{
-        height: 100vh;
-    }
+
     .homeWrapper{
         background-color: #fff;
         padding: 2rem;
@@ -203,15 +201,19 @@
                 .message{
                     display: flex;
                     align-items: center;
-                    gap: 2rem;
+                    
 
                     .messageInfo{
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-                        margin-left: 1rem;
-                        margin-right: 1rem;
+                        margin: 0.5rem;
+                        
+                        img{
+                            border-radius: 50%;
+                            width: 35px;
+                        }
                     }
                     .messageContent{
                         display: flex;
@@ -223,7 +225,7 @@
                             padding: 0.5rem 1rem; 
                             border-radius: 1rem;
                             max-width: max-content;
-                            margin: 1rem;
+                            margin: 0.5rem;
                         }
                         img{
                             max-width: 60%;
