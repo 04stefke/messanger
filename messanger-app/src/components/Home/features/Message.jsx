@@ -1,21 +1,31 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import {UserOutlined} from '@ant-design/icons'
 import { AuthContext } from '../../../context/AuthContext'
 import { UserContext } from '../../../context/UserContext'
-const Message = ({m}) => {
+const Message = ({message}) => {
   const {currentUser} = useContext(AuthContext)
   const {data} = useContext(UserContext)
+  console.log(message)
+  const ref = useRef()
 
+  useEffect(() => {
+    ref.current?.scrollIntoView({behavior: 'smooth'})
+  }, [message])
+  
+  if (!message || Object.keys(message).length === 0) {
+    return <div>Loading message...</div>;
+  }
+  
   return (
-    <div className='message owner'>
+    <div ref={ref} className={`message ${message?.senderId === currentUser.uid && 'owner'}`}>
       <div className="messageInfo">
         
-          
+          <img src={message?.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL} alt="" />
       </div>
       <div className="messageContent">
-        <p>Hello, this is a message</p>
+        <p>{message.text}</p>
+        {message.img && <img src={message.img} alt="" />}
         
-        <img src="https://cdn-img1.imgworlds.com/assets/a8f48ba2-9603-4e2b-ac2d-60ce06efa566.jpg?key=home-gallery" alt="" />
         <span>just now</span>
       </div>
       

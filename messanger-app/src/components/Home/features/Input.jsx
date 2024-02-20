@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import {FileAddOutlined} from '@ant-design/icons'
 import { UserContext } from '../../../context/UserContext'
 import { AuthContext } from '../../../context/AuthContext'
-import { Timestamp, arrayUnion, doc, updateDoc } from 'firebase/firestore'
+import { Timestamp, arrayUnion, doc, serverTimestamp, updateDoc } from 'firebase/firestore'
 import { db, storage } from '../../../firebase'
 import {v4 as uuid} from 'uuid'
 import { ref, uploadBytesResumable } from 'firebase/storage'
@@ -10,6 +10,7 @@ import { ref, uploadBytesResumable } from 'firebase/storage'
 const Input = () => {
   const {currentUser} = useContext(AuthContext)
   const {data} = useContext(UserContext)
+
   const [text, setText] = useState('')
   const [img, setImg] = useState(null)
 
@@ -17,7 +18,7 @@ const Input = () => {
     if(img){
       const storageRef = ref(storage, uuid())
       const updateFile = uploadBytesResumable(storageRef, img)
-      uploadTask.on(
+      updateFile.on(
         (error) => {
           console.log(error)
         }, 
@@ -46,12 +47,25 @@ const Input = () => {
         })
       })
     }
+    await updateDoc(doc(db, 'userChat', currentUser.uid),{
+      [data.chatId + '.lastMessage']: {
+        text,
+      },
+      [data.chatId + '.data']: serverTimestamp(),
+    })
+    await updateDoc(doc(db, 'userChat', data.user.uid),{
+      [data.chatId + '.lastMessage']: {
+        text,
+      },
+      [data.chatId + '.data']: serverTimestamp(),
+    })
+    
     setText('')
     setImg(null)
   }
   return (
     <div className='inputContainer'>
-      <input type="text" placeholder='Type something...' onChange={(e) => setText(e.target.value)}/>
+      <input type="text" placeholder='Type something...' onChange={(e) => setText(e.target.value)} value={text}/>
       <div className="inputInfo">
         <div>
         <input type="file" id='firstFile' onChange={(e) => setImg(e.target.files[0])}/>

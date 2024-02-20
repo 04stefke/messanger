@@ -7,7 +7,7 @@ import { db } from '../../../firebase'
 const Messages = () => {
   const {data} = useContext(UserContext)
   const [messages, setMessages] = useState([])
-
+  console.log(messages)
   useEffect(() => {
     const unsub = onSnapshot(doc(db, 'chats', data.chatId), (doc) => {
       doc.exists() && setMessages(doc.data().messages)
@@ -20,8 +20,8 @@ const Messages = () => {
   
   return (
     <div className='messagesContainer'>
-      {messages.map(m => (
-        <Message messages={m} key={m.id}/>
+      {messages.map(message => (
+        <Message message={message} key={message.id}/>
       ))}
       
     </div>
