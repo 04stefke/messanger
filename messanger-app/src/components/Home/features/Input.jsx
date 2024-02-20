@@ -5,7 +5,7 @@ import { AuthContext } from '../../../context/AuthContext'
 import { Timestamp, arrayUnion, doc, serverTimestamp, updateDoc } from 'firebase/firestore'
 import { db, storage } from '../../../firebase'
 import {v4 as uuid} from 'uuid'
-import { ref, uploadBytesResumable } from 'firebase/storage'
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 
 const Input = () => {
   const {currentUser} = useContext(AuthContext)
@@ -23,7 +23,7 @@ const Input = () => {
           console.log(error)
         }, 
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+          getDownloadURL(updateFile.snapshot.ref).then(async (downloadURL) => {
             await updateDoc(doc(db, 'chats', data.chatId), {
               messages: arrayUnion({
                 id: uuid(),

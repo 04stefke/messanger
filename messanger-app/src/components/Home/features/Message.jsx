@@ -17,16 +17,17 @@ const Message = ({message}) => {
   }
   
   return (
-    <div ref={ref} className={`message ${message?.senderId === currentUser.uid && 'owner'}`}>
+    <div className={`message ${message?.senderId === currentUser.uid && 'owner'}`}>
       <div className="messageInfo">
-        
-          <img src={message?.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL} alt="" />
+          {message?.senderId === currentUser.uid ? 
+          <img src={message?.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL} width={'50px'} alt="" /> : <UserOutlined/>}
+          <span>just now</span>
       </div>
-      <div className="messageContent">
+      <div ref={ref} className="messageContent">
         <p>{message.text}</p>
-        {message.img && <img src={message.img} alt="" />}
+        {message.img && <img src={message.img}  alt="" />}
         
-        <span>just now</span>
+        
       </div>
       
     </div>

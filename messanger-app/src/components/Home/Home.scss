@@ -34,7 +34,7 @@
         padding: 2rem;
         border-radius: 20px;
         width:80vw;
-        height: fit-content;
+        height: 80vh;
         display: flex;
         min-height: 700px;
         @include desktop{
@@ -216,12 +216,13 @@
                         flex-direction: column;
                         p{
                             background-color: #ddd;
-                            padding: 1rem 2rem; 
-                            border-radius: 0 1rem 1rem 1rem;
+                            padding: 0.5rem 1rem; 
+                            border-radius: 1rem;
                             max-width: max-content;
+                            margin: 1rem;
                         }
                         img{
-                            max-width: max-content;
+                            max-width: 80%;
                             @include desktop{
                                 width: 90%;
                             }
