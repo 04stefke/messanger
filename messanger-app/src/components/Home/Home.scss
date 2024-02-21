@@ -35,7 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    position: relative;
     .homeWrapper{
         background-color: #fff;
         padding: 2rem;
@@ -44,6 +44,7 @@
         height: 80vh;
         display: flex;
         min-height: 700px;
+        
         @include desktop{
             flex-direction: column;
         }
@@ -184,6 +185,7 @@
             flex: 2;
             border-right: 1px solid lightgray;
             height: 80%;
+            
             @include desktop{
                 flex: 4;
             }
@@ -251,8 +253,6 @@
                 .message{
                     display: flex;
                     align-items: center;
-                    
-
                     .messageInfo{
                         display: flex;
                         justify-content: center;
@@ -283,7 +283,6 @@
                                 width: 50%;
                             }
                         }
-
                     }
                     &.owner{
                         flex-direction: row-reverse;
@@ -299,5 +298,17 @@
             }
         }
 
+    }
+    .imgLightboxx{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        background-color: hsla(0, 0, 0, 0.6);
+        transform: translate();
+        display: grid;
+        place-items: center;
     }
 }
