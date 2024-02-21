@@ -23,6 +23,11 @@ Users should be able to:
 - Finally the users are able to logout from their account!
 
 ## Screenshots
+![Screenshot 2024-02-21 184736](https://github.com/04stefke/messanger/assets/139073312/d8f0aca7-361a-4276-8b45-9afe732aeff4)
+![Screenshot 2024-02-21 184801](https://github.com/04stefke/messanger/assets/139073312/0bbfe765-8dff-4961-a7c0-a1d435d59930)
+![Screenshot 2024-02-21 184815](https://github.com/04stefke/messanger/assets/139073312/001a4421-7f56-47c2-a669-1a40dc374a3f)
+![Screenshot 2024-02-21 184919](https://github.com/04stefke/messanger/assets/139073312/48ba7f00-40d7-4180-b91f-8fadebfaa78f)
+![Screenshot 2024-02-21 184931](https://github.com/04stefke/messanger/assets/139073312/37258c5d-f966-481a-b0d9-7a5cca9c87c7)
 
 
 ## Languages used
