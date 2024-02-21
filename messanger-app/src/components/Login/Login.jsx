@@ -1,11 +1,12 @@
 import React from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { auth, db, storage } from '../../firebase'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
 
 const Login = () => {
   var navigate = useNavigate ()
+
   const handleSubmit = async(e) => {
     e.preventDefault()
     const email = e.target[0].value
@@ -21,6 +22,18 @@ const Login = () => {
     
 
   }
+  const handleGoogle = async(e) => {
+    try{
+      const provider = new GoogleAuthProvider()
+      const res = await signInWithPopup(auth, provider)
+      const user = res.user;
+      navigate('/')
+      console.log(user)
+    }catch(error){
+      console.log(error)
+    };
+  }
+
   return (
     <div className='formContainer'>
       <div className='formWrapper'>
@@ -31,7 +44,7 @@ const Login = () => {
             <input type="password" placeholder='Enter your password' />
             <button className='btn'>Sign in</button>
         </form>
-        <button className='btn'>Login with Google</button>
+        <button className='btn' onClick={handleGoogle}>Login with Google</button>
         <button className="btn">Login With Facebook</button>
         <p>Need an account?<Link to='/register'>Register</Link> </p>
       </div>

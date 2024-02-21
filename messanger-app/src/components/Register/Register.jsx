@@ -10,6 +10,7 @@ import { doc, setDoc } from "firebase/firestore";
 
 const Register = () => {
   var navigate = useNavigate ()
+
   const handleSubmit = async(e) => {
     e.preventDefault()
     const displayName = e.target[0].value
@@ -53,18 +54,44 @@ const Register = () => {
     
 
   }
-  const handleGoogle = (e) => {
-    const provider = new GoogleAuthProvider()
-    signInWithPopup(auth, provider)
-    .then((result) => {
-     
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const user = result.user;
+  
+  const handleGoogle = async(e) => {
+    try{
+      const provider = new GoogleAuthProvider()
+      const res = await signInWithPopup(auth, provider)
+      const user = res.user;
+      
+      const email = user.email
+      const file = user.photoURL
+      const displayName = user.displayName
+
+      const storageRef = ref(storage, displayName);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on(
+        (error) => {
+          console.log(error)
+        }, 
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await setDoc(doc(db, "users", user.uid),{
+              uid: user.uid,
+              displayName, 
+              email,
+              photoURL: downloadURL
+            })
+            await setDoc(doc(db, "userChat", user.uid), {
+              
+            })
+            navigate("/")
+          });
+          
+        }
+      );
       console.log(user)
-      navigate('/')
-    }).catch((error) => {
+    }catch(error){
       console.log(error)
-    });
+    };
   }
   return (
     <div className='formContainer'>
