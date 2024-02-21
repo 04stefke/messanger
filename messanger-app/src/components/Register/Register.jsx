@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate  } from 'react-router-dom';
-import {FileAddOutlined} from '@ant-design/icons'
+import {FacebookOutlined, FileAddOutlined, GoogleOutlined} from '@ant-design/icons'
 import './Register.scss'
 import {auth, db, storage} from '../../firebase'
 import {createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup} from 'firebase/auth'
@@ -109,8 +109,8 @@ const Register = () => {
                 </label>
                 <button className="btn">Sign up</button>
             </form>
-            <button className='btn' onClick={handleGoogle}>Login with Google</button>
-            <button className="btn">Login With Facebook</button>
+            <button className='btn' onClick={handleGoogle} style={{width: '300px'}}> <GoogleOutlined/> Login with Google</button>
+            <button className="btn" style={{width: '300px'}}> <FacebookOutlined/>Login With Facebook</button>
             <p>Got an account! <Link to='/login'>Login</Link> </p>
         </div>
     </div>

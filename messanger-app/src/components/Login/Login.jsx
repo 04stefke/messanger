@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { auth, db, storage } from '../../firebase'
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
+import { FacebookOutlined, GoogleOutlined } from '@ant-design/icons'
 
 const Login = () => {
   var navigate = useNavigate ()
@@ -44,8 +45,8 @@ const Login = () => {
             <input type="password" placeholder='Enter your password' />
             <button className='btn'>Sign in</button>
         </form>
-        <button className='btn' onClick={handleGoogle}>Login with Google</button>
-        <button className="btn">Login With Facebook</button>
+        <button className='btn' onClick={handleGoogle} style={{width: '300px'}}><GoogleOutlined/> Login with Google</button>
+        <button className="btn" style={{width: '300px'}}> <FacebookOutlined/> Login With Facebook</button>
         <p>Need an account?<Link to='/register'>Register</Link> </p>
       </div>
     </div>
