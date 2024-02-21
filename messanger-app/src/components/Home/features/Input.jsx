@@ -37,7 +37,7 @@ const Input = () => {
           
         }
       );
-    } else {
+    } else if(text.trim().length > 0) {
       await updateDoc(doc(db, 'chats', data.chatId), {
         messages: arrayUnion({
           id: uuid(),
@@ -65,7 +65,7 @@ const Input = () => {
   }
   return (
     <div className='inputContainer'>
-      <input type="text" placeholder='Type something...' onChange={(e) => setText(e.target.value)} value={text}/>
+      <input type="text" placeholder='Type something...' onChange={(e) => setText(e.target.value)} value={text} />
       <div className="inputInfo">
         <div>
         <input type="file" id='firstFile' onChange={(e) => setImg(e.target.files[0])}/>
