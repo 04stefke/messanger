@@ -31,6 +31,8 @@ const Login = () => {
             <input type="password" placeholder='Enter your password' />
             <button className='btn'>Sign in</button>
         </form>
+        <button className='btn'>Login with Google</button>
+        <button className="btn">Login With Facebook</button>
         <p>Need an account?<Link to='/register'>Register</Link> </p>
       </div>
     </div>
