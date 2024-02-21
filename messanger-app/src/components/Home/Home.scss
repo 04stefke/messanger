@@ -35,9 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include desktop{
-        height: 100%;
-    }
+
 
     .homeWrapper{
         background-color: #fff;
@@ -49,7 +47,6 @@
         min-height: 700px;
         @include desktop{
             flex-direction: column;
-            height: 100%;
         }
         .sidebarContainer{
             flex: 1;
@@ -58,9 +55,7 @@
             align-items: flex-start;
             justify-content: space-between;
             flex-direction: column;
-            @include desktop{
-                flex: none;
-            }
+            position: relative;
             .sidebarInfo{
                 width: 100%;
                 margin-right: 2rem;
@@ -76,7 +71,7 @@
                 .user{
                     display: flex;
                     align-items: center;
-                    gap: 2rem;
+                    gap: 1rem;
                     .btn{
                         padding: 0.5rem 1rem;
                         border-radius: 10px;
@@ -118,12 +113,15 @@
                     &:hover{
                         background-color: #eee;
                     }
+                    @include desktop{
+                        padding: 0.5rem 1rem 0.5rem 0;
+                        margin-top: 0;
+                    }
                 }
             }
             
             .chatsContainer{
                 margin-top: 1rem;
-                
                 .userChat{
                     display: flex;
                     align-items: center;
@@ -133,6 +131,11 @@
                     cursor: pointer;
                     img{
                         border-radius: 50%;
+                    }
+                    @include desktop{
+                        padding: 0.5rem 1rem 0.5rem 0;
+                        margin-top: 0;
+                        display: none;
                     }
                     .userChatInfo {
                         p{
@@ -148,13 +151,25 @@
                         background-color: #eee;
                     }
                 }
+                .userTrue{
+                    display: flex;
+                }
+                .dropdownBtn{
+                    position: absolute;
+                    top: 10px;
+                    left: 200px;
+                    display: none;
+                    @include desktop{
+                        display: block;
+                    }
+                }
             }
         }
         .chatContainer{
             flex: 2;
             border-right: 1px solid lightgray;
             @include desktop{
-                flex: none;
+                flex: 4;
             }
             .chatInfo{
                 background-color: #eee;
