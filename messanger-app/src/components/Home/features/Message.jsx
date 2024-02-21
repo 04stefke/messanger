@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef } from 'react'
-import {UserOutlined} from '@ant-design/icons'
 import { AuthContext } from '../../../context/AuthContext'
 import { UserContext } from '../../../context/UserContext'
 const Message = ({message}) => {

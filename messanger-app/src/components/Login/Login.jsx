@@ -1,9 +1,8 @@
 import React from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { auth, db, storage } from '../../firebase'
+import { auth,} from '../../firebase'
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
-import { doc, setDoc } from 'firebase/firestore'
-import { FacebookOutlined, GoogleOutlined } from '@ant-design/icons'
+import { GoogleOutlined } from '@ant-design/icons'
 
 const Login = () => {
   var navigate = useNavigate ()
@@ -46,7 +45,6 @@ const Login = () => {
             <button className='btn'>Sign in</button>
         </form>
         <button className='btn' onClick={handleGoogle} style={{width: '300px'}}><GoogleOutlined/> Login with Google</button>
-        <button className="btn" style={{width: '300px'}}> <FacebookOutlined/> Login With Facebook</button>
         <p>Need an account?<Link to='/register'>Register</Link> </p>
       </div>
     </div>

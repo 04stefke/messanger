@@ -3,7 +3,7 @@ import { Link, useNavigate  } from 'react-router-dom';
 import {FacebookOutlined, FileAddOutlined, GoogleOutlined} from '@ant-design/icons'
 import './Register.scss'
 import {auth, db, storage} from '../../firebase'
-import {createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup} from 'firebase/auth'
+import {createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, signInWithRedirect} from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"; 
 
@@ -56,6 +56,7 @@ const Register = () => {
   }
   
   const handleGoogle = async(e) => {
+    e.preventDefault()
     try{
       const provider = new GoogleAuthProvider()
       const res = await signInWithPopup(auth, provider)
@@ -93,6 +94,9 @@ const Register = () => {
       console.log(error)
     };
   }
+
+
+
   return (
     <div className='formContainer'>
         <div className="formWrapper">
@@ -110,7 +114,6 @@ const Register = () => {
                 <button className="btn">Sign up</button>
             </form>
             <button className='btn' onClick={handleGoogle} style={{width: '300px'}}> <GoogleOutlined/> Login with Google</button>
-            <button className="btn" style={{width: '300px'}}> <FacebookOutlined/>Login With Facebook</button>
             <p>Got an account! <Link to='/login'>Login</Link> </p>
         </div>
     </div>
