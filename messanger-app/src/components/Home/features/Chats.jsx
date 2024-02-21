@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { db } from '../../../firebase'
 import { AuthContext } from '../../../context/AuthContext'
 import { UserContext } from '../../../context/UserContext'
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
 const Chats = () => {
   const [show, setShow] = useState(false)
   const [chats, setChats] = useState([])
@@ -25,6 +26,11 @@ const Chats = () => {
 
   const handleSelect = (user) => {
     dispatch({type: 'CHANGE_USER', payload: user})
+    if(show){
+      setShow(false)
+    }else{
+      setShow(true)
+    }
   }
 
   const handleDropdown = () => {
@@ -46,7 +52,7 @@ const Chats = () => {
           </div>
         </div>
         ))}
-      <button className="btn dropdownBtn" onClick={handleDropdown}>1</button>
+      <button className="btn dropdownBtn" onClick={handleDropdown}>{show ? <CaretUpOutlined /> : <CaretDownOutlined/>}</button>
     </div>
   )
 }

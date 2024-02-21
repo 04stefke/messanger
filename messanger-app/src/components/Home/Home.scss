@@ -1,5 +1,5 @@
 @mixin mobile{
-    @media screen and (max-width:480px) {
+    @media screen and (max-width:550px) {
         @content
     }
 };
@@ -36,7 +36,6 @@
     justify-content: center;
     align-items: center;
 
-
     .homeWrapper{
         background-color: #fff;
         padding: 2rem;
@@ -47,6 +46,13 @@
         min-height: 700px;
         @include desktop{
             flex-direction: column;
+        }
+        @include mobile{
+            width: 100%;
+            height: 100%;
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 0;
         }
         .sidebarContainer{
             flex: 1;
@@ -67,7 +73,11 @@
                 justify-content: space-between;
                 padding: 1rem;
                 border-radius: 10px;
-
+                @include mobile{
+                    img{
+                        display: none;
+                    }
+                }
                 .user{
                     display: flex;
                     align-items: center;
@@ -156,13 +166,18 @@
                 }
                 .dropdownBtn{
                     position: absolute;
-                    top: 10px;
-                    left: 200px;
+                    top: 75px;
+                    right: 10px;
                     display: none;
+                    padding: 0.5rem 1rem;
+                    background-color: transparent;
+                    height: 40px;
+                    font-size: 20px;
                     @include desktop{
                         display: block;
                     }
                 }
+
             }
         }
         .chatContainer{
@@ -170,6 +185,9 @@
             border-right: 1px solid lightgray;
             @include desktop{
                 flex: 4;
+            }
+            @include mobile{
+                flex: 6;
             }
             .chatInfo{
                 background-color: #eee;
