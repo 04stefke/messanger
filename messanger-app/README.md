@@ -1,4 +1,4 @@
-# Stefan's E-Commerce Project
+# Stefan's React Chat App
 
 - [About](#about)
 - [Introduction](#introduction)
