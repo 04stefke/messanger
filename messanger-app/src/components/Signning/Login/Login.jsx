@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { auth,} from '../../firebase'
+import { auth,} from '../../../firebase'
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { GoogleOutlined } from '@ant-design/icons'
 

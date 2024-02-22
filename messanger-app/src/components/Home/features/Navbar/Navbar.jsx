@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import {UserOutlined} from '@ant-design/icons'
-import {auth} from '../../../firebase'
+import {auth} from '../../../../firebase'
 import {signOut} from 'firebase/auth'
-import {AuthContext} from '../../../context/AuthContext'
+import {AuthContext} from '../../../../context/AuthContext'
 const Navbar = () => {
   const {currentUser} = useContext(AuthContext)
   return (

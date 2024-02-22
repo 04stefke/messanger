@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import {FileAddOutlined} from '@ant-design/icons'
-import { UserContext } from '../../../context/UserContext'
-import { AuthContext } from '../../../context/AuthContext'
+import { UserContext } from '../../../../context/UserContext'
+import { AuthContext } from '../../../../context/AuthContext'
 import { Timestamp, arrayUnion, doc, serverTimestamp, updateDoc } from 'firebase/firestore'
-import { db, storage } from '../../../firebase'
+import { db, storage } from '../../../../firebase'
 import {v4 as uuid} from 'uuid'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 

@@ -1,9 +1,9 @@
 import { UserOutlined } from '@ant-design/icons'
 import React, { useContext, useState } from 'react'
 import { collection, doc, getDoc, getDocs, query, serverTimestamp, setDoc, updateDoc, where } from 'firebase/firestore'
-import { db } from '../../../firebase'
-import { AuthContext } from '../../../context/AuthContext'
-import { UserContext } from '../../../context/UserContext'
+import { db } from '../../../../firebase'
+import { AuthContext } from '../../../../context/AuthContext'
+import { UserContext } from '../../../../context/UserContext'
 const Search = () => {
 
   const [username, setUsername] = useState('')

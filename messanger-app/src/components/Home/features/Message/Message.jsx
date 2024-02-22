@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { AuthContext } from '../../../context/AuthContext'
-import { UserContext } from '../../../context/UserContext'
+import { AuthContext } from '../../../../context/AuthContext'
+import { UserContext } from '../../../../context/UserContext'
 const Message = ({message}) => {
   const [lightbox, setLighbox] = useState(false)
   const {currentUser} = useContext(AuthContext)

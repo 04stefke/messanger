@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import './App.scss'
 import Home from './components/Home/Home'
-import Login from './components/Login/Login'
-import Register from './components/Register/Register'
+import Login from './components/Signning/Login/Login'
+import Register from './components/Signning/Register/Register'
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 import { AuthContext } from './context/AuthContext'
 function App() {

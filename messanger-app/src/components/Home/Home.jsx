@@ -1,7 +1,6 @@
 import React from 'react'
-import Navbar from './features/Navbar'
-import Sidebar from './features/Sidebar'
-import Chat from './features/Chat'
+import Sidebar from './features/Sidebar/Sidebar'
+import Chat from './features/Chat/Chat'
 import './Home.scss'
 const Home = () => {
   return (

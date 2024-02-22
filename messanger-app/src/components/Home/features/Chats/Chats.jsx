@@ -1,8 +1,8 @@
 import { doc, onSnapshot } from 'firebase/firestore'
 import React, { useContext, useEffect, useState } from 'react'
-import { db } from '../../../firebase'
-import { AuthContext } from '../../../context/AuthContext'
-import { UserContext } from '../../../context/UserContext'
+import { db } from '../../../../firebase'
+import { AuthContext } from '../../../../context/AuthContext'
+import { UserContext } from '../../../../context/UserContext'
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
 const Chats = () => {
   const [show, setShow] = useState(false)
