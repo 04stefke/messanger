@@ -96,7 +96,7 @@ const Register = () => {
   }
 
 
-
+ 
   return (
     <div className='formContainer'>
         <div className="formWrapper">
@@ -107,9 +107,9 @@ const Register = () => {
                 <input type="email" placeholder='Please enter your email' data-testid='register-email'/>
                 <input type="password" placeholder='Please enter your password' data-testid='register-password'/>
                 <input type="file" id='fileInput' style={{display:'none'}} required data-testid='register-file'/>
-                <label htmlFor="fileInput">
+                <label htmlFor="fileInput" data-testid='register-file-upload'>
                     <FileAddOutlined />
-                    <span data-testid='register-file-upload'>Add an Avatar</span>
+                    <span >Add an Avatar</span>
                 </label>
                 <button className="btn" data-testid='register-button'>Sign up</button>
             </form>
