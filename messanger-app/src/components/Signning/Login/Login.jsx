@@ -37,15 +37,15 @@ const Login = () => {
   return (
     <div className='formContainer'>
       <div className='formWrapper'>
-        <h1>My Chat</h1>
-        <h3>Login</h3>
+        <h1 data-testid='login-title'>My Chat</h1>
+        <h3 data-testid='login-h3'>Login</h3>
         <form onSubmit={handleSubmit}>
-            <input type="email" placeholder='Enter your email' />
-            <input type="password" placeholder='Enter your password' />
-            <button className='btn'>Sign in</button>
+            <input type="email" placeholder='Enter your email' data-testid='signin-email-input' />
+            <input type="password" placeholder='Enter your password' data-testid='signin-password-input' />
+            <button className='btn' data-testid='signin-btn'>Sign in</button>
         </form>
         <button className='btn' onClick={handleGoogle} style={{width: '300px'}}><GoogleOutlined/> Login with Google</button>
-        <p>Need an account?<Link to='/register'>Register</Link> </p>
+        <p data-testid='register-text'>Need an account?<Link to='/register' data-testid='register-redirect'>Register</Link></p>
       </div>
     </div>
   )
