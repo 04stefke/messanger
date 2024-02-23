@@ -39,7 +39,7 @@ describe('should show the input container', () => {
 
   it('should display the file uploaded ', () => {
     cy.get("[data-testid='input-file-upload']").selectFile('src/assets/testing-img.jpg')
-    // cy.get("[data-testid='chat-input-send-btn']").should('be.visible').click()
+    cy.get("[data-testid='chat-input-send-btn']").should('be.visible')
 
     cy.get("[data-testid='chat-image']").should('be.visible')
   })
