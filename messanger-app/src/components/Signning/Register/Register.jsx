@@ -100,21 +100,27 @@ const Register = () => {
   return (
     <div className='formContainer'>
         <div className="formWrapper">
-            <h1>My Chat</h1>
-            <h3>Register</h3>
+            <h1 data-testid='register-title'>My Chat</h1>
+            <h3 data-testid='register-h3'>Register</h3>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder='Please Enter Your Name' />
-                <input type="email" placeholder='Please enter your email' />
-                <input type="password" placeholder='Please enter your password' />
-                <input type="file" id='fileInput' style={{display:'none'}} required/>
+                <input type="text" placeholder='Please Enter Your Name'data-testid='register-username' />
+                <input type="email" placeholder='Please enter your email' data-testid='register-email'/>
+                <input type="password" placeholder='Please enter your password' data-testid='register-password'/>
+                <input type="file" id='fileInput' style={{display:'none'}} required data-testid='register-file'/>
                 <label htmlFor="fileInput">
                     <FileAddOutlined />
-                    <span>Add an Avatar</span>
+                    <span data-testid='register-file-upload'>Add an Avatar</span>
                 </label>
-                <button className="btn">Sign up</button>
+                <button className="btn" data-testid='register-button'>Sign up</button>
             </form>
-            <button className='btn' onClick={handleGoogle} style={{width: '300px'}}> <GoogleOutlined/> Login with Google</button>
-            <p>Got an account! <Link to='/login'>Login</Link> </p>
+            <button 
+              className='btn' 
+              onClick={handleGoogle} 
+              style={{width: '300px'}} 
+              data-testid='register-google-signin'> 
+                <GoogleOutlined/> Sign in with Google
+            </button>
+            <p data-testid='register-redirect'>Got an account! <Link to='/login' data-testid='register-redirect-link'>Login</Link> </p>
         </div>
     </div>
   )
