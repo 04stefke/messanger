@@ -40,11 +40,11 @@ const Login = () => {
         <h1 data-testid='login-title'>My Chat</h1>
         <h3 data-testid='login-h3'>Login</h3>
         <form onSubmit={handleSubmit}>
-            <input type="email" placeholder='Enter your email' data-testid='signin-email-input' />
-            <input type="password" placeholder='Enter your password' data-testid='signin-password-input' />
-            <button className='btn' data-testid='signin-btn'>Sign in</button>
+            <input type="email" placeholder='Enter your email' data-testid='login-email-input' />
+            <input type="password" placeholder='Enter your password' data-testid='login-password-input' />
+            <button className='btn' data-testid='login-btn'>Sign in</button>
         </form>
-        <button className='btn' onClick={handleGoogle} style={{width: '300px'}}><GoogleOutlined/> Login with Google</button>
+        <button className='btn' onClick={handleGoogle} style={{width: '300px'}} data-testid='google-login'><GoogleOutlined/> Login with Google</button>
         <p data-testid='register-text'>Need an account?<Link to='/register' data-testid='register-redirect'>Register</Link></p>
       </div>
     </div>

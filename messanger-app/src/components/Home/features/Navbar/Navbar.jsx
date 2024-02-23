@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="user">
         <img src={currentUser.photoURL} style={{width: '40px', borderRadius: '50%', objectFit:'cover'}}/> 
         <span className='userName'>{currentUser.displayName}</span>
-        <button className='btn' onClick={() => signOut(auth)}>Logout</button>
+        <button className='btn' onClick={() => signOut(auth)} data-testid='logout-btn'>Logout</button>
       </div> 
 
         
