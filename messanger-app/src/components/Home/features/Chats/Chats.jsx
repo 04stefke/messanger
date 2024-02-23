@@ -44,15 +44,24 @@ const Chats = () => {
   return (
     <div className='chatsContainer'>
       {Object.entries(chats)?.sort((a, b) => b[1].date - a[1].date).map(chat => ( 
-        <div className={`userChat ${show && 'userTrue'}`} key={chat[0]} onClick={() => handleSelect(chat[1].userInfo)}>
-          <img src={chat[1].userInfo.photoURL} width={'50px'} alt="" />
-          <div className="userChatInfo">
-            <span>{chat[1].userInfo.displayName}</span>
-            <p>{chat[1].lastMessage?.text}</p>
-          </div>
+        <div 
+          className={`userChat ${show && 'userTrue'}`} 
+          key={chat[0]} 
+          onClick={() => handleSelect(chat[1].userInfo)}
+          data-testid='available-users'>
+            <img src={chat[1].userInfo.photoURL} width={'50px'} alt="" />
+            <div className="userChatInfo">
+              <span>{chat[1].userInfo.displayName}</span>
+              <p>{chat[1].lastMessage?.text}</p>
+            </div>
         </div>
         ))}
-      <button className="btn dropdownBtn" onClick={handleDropdown}>{show ? <CaretUpOutlined /> : <CaretDownOutlined/>}</button>
+      <button 
+        className="btn dropdownBtn" 
+        onClick={handleDropdown}
+        data-testid='dropdown-button'>
+          {show ? <CaretUpOutlined /> : <CaretDownOutlined/>}
+        </button>
     </div>
   )
 }

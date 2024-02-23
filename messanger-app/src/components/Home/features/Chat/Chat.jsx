@@ -10,7 +10,7 @@ const Chat = () => {
   return (
     <div className='chatContainer'>
       <div className="chatInfo">
-        <span>{data.user.displayName}</span>
+        <span data-testid='chat-displayName'>{data.user.displayName}</span>
       </div>
       <Messages/>
       <Input/>

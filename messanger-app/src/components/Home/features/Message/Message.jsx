@@ -27,12 +27,12 @@ const Message = ({message}) => {
   return (
     <div className={`message ${message?.senderId === currentUser.uid && 'owner'}`}>
       <div className="messageInfo">
-          <img src={message?.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL} alt="" />
+          <img src={message?.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL} alt="" data-test='message-profile-pic' />
           
       </div>
       <div ref={ref} className="messageContent">
-        <p>{message.text}</p>
-        <div className={`lightbox ${lightbox && 'imgLightboxx'}`}>
+        <p data-test='message-container'>{message.text}</p>
+        <div className={`lightbox ${lightbox && 'imgLightboxx'}`} data-test='message-img'>
           {message.img && <img src={message.img} className={`${lightbox && 'imgLightbox'}`} onClick={handleLightbox} alt="" />}
         </div>
         
