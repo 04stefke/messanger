@@ -65,21 +65,14 @@ const Input = () => {
   }
   return (
     <div className='inputContainer'>
-      <input type="text" placeholder='Type something...' onChange={(e) => setText(e.target.value)} value={text} />
+      <input type="text" placeholder='Type something...' onChange={(e) => setText(e.target.value)} value={text} data-testid='chat-input' />
       <div className="inputInfo">
         <div>
         <input type="file" id='firstFile' onChange={(e) => setImg(e.target.files[0])}/>
-        <label htmlFor="firstFile"><FileAddOutlined /></label>
+        <label htmlFor="firstFile" data-testid='input-file-upload'><FileAddOutlined /></label>
       </div>
-
-      <div>
-      <input type="file" id='secondFile'/>
-      <label htmlFor="secondFile"><FileAddOutlined /></label>
-      </div>
-
-
       
-      <button className="btn" onClick={handleSend}>Send</button>
+      <button className="btn" onClick={handleSend} data-testid='chat-input-send-btn'>Send</button>
       </div>
       
     </div>

@@ -31,9 +31,9 @@ const Message = ({message}) => {
           
       </div>
       <div ref={ref} className="messageContent">
-        <p data-test='message-container'>{message.text}</p>
+        <p  data-testid='message-container'>{message.text}</p>
         <div className={`lightbox ${lightbox && 'imgLightboxx'}`} data-test='message-img'>
-          {message.img && <img src={message.img} className={`${lightbox && 'imgLightbox'}`} onClick={handleLightbox} alt="" />}
+          {message.img && <img src={message.img} className={`${lightbox && 'imgLightbox'}`} onClick={handleLightbox} alt="" data-testid='chat-image'/>}
         </div>
         
       </div>
