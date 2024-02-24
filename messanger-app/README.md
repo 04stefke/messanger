@@ -29,6 +29,11 @@ Users should be able to:
 ![Screenshot 2024-02-21 184919](https://github.com/04stefke/messanger/assets/139073312/48ba7f00-40d7-4180-b91f-8fadebfaa78f)
 ![Screenshot 2024-02-21 184931](https://github.com/04stefke/messanger/assets/139073312/37258c5d-f966-481a-b0d9-7a5cca9c87c7)
 
+![Screenshot 2024-02-24 143242](https://github.com/04stefke/messanger/assets/139073312/5169c84b-5212-4dba-bd85-ab7ed293cd62)
+![Screenshot 2024-02-23 202459](https://github.com/04stefke/messanger/assets/139073312/e580bead-017e-46ad-8be2-2da39feb3c8a)
+![Screenshot 2024-02-23 142325](https://github.com/04stefke/messanger/assets/139073312/c00d62a7-fa40-478f-9611-354fee3a1b25)
+
+
 
 ## Languages used
 - HTML5
