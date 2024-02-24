@@ -7,10 +7,10 @@ const Navbar = () => {
   const {currentUser} = useContext(AuthContext)
   return (
     <div className='navbarContainer'>
-      <span>Stefan's Chat</span>
+      <span data-testid='chat-title'>Stefan's Chat</span>
       <div className="user">
-        <img src={currentUser.photoURL} style={{width: '40px', borderRadius: '50%', objectFit:'cover'}}/> 
-        <span className='userName'>{currentUser.displayName}</span>
+        <img src={currentUser.photoURL} style={{width: '40px', borderRadius: '50%', objectFit:'cover'}} data-testid='navbar-photo'/> 
+        <span className='userName' data-testid='navbar-username'>{currentUser.displayName}</span>
         <button className='btn' onClick={() => signOut(auth)} data-testid='logout-btn'>Logout</button>
       </div> 
 
