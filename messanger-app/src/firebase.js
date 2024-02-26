@@ -5,12 +5,12 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD_HaI1zgSpwjCDtojHPsyp91dyuUjQXKo",
-  authDomain: "allchat-f72cf.firebaseapp.com",
-  projectId: "allchat-f72cf",
-  storageBucket: "allchat-f72cf.appspot.com",
-  messagingSenderId: "817962144650",
-  appId: "1:817962144650:web:c505fdf4591284b77dae73"
+  apiKey: import.meta.env.VITE_REACT_APP_API_KEY,
+  authDomain: import.meta.env.VITE_REACT_APP_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_REACT_APP_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_REACT_APP_MESSAGING_SENDERID,
+  appId: import.meta.env.VITE_REACT_APP_ID
   };
 
 

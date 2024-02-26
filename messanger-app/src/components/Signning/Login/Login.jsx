@@ -28,7 +28,6 @@ const Login = () => {
       const res = await signInWithPopup(auth, provider)
       const user = res.user;
       navigate('/')
-      console.log(user)
     }catch(error){
       console.log(error)
     };
